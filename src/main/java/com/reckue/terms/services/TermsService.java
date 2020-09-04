@@ -16,4 +16,8 @@ public class TermsService {
     public List<Term> getAll() {
         return termsRepository.findAll();
     }
+
+    public Term postOne(Term term) {
+        return termsRepository.save(term);
+    }
 }

@@ -3,10 +3,7 @@ package com.reckue.terms.controllers;
 import com.reckue.terms.models.Term;
 import com.reckue.terms.services.TermsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +18,10 @@ public class TermsController {
     @GetMapping("/")
     public List<Term> getAll() {
         return termsService.getAll();
+    }
+
+    @PostMapping("/")
+    public Term postOne(@RequestBody Term term) {
+        return termsService.postOne(term);
     }
 }

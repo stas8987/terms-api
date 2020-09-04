@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TermsRepository extends MongoRepository<Term, String> {
+
+    Term findByUserIdAndCollectionIdAndName(String userId, String collectionId, String name);
 }
